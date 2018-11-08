@@ -5,5 +5,5 @@ RUN yum -y install epel-release
 RUN yum -y install nginx
 COPY ./hello.html /usr/share/nginx/html/
 WORKDIR /app
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/bin/sh", "-c", "nginx -g daemon off"]
 #CMD ["1000000"]
